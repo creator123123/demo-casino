@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лучшие игровые платформы 2024 | Бесплатный демо-режим</title>
+    <style>
+        :root {
+            --primary-color: #ff0055;
+            --secondary-color: #00ff88;
+            --bg-gradient: radial-gradient(circle at center, #1a1a1a 0%, #000000 100%);
+            --button-bg: linear-gradient(45deg, #ff0055, #ffcc00);
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: var(--bg-gradient);
+            color: white;
+            text-align: center;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: auto;
+            padding: 20px;
+        }
+
+        .hero {
+            position: relative;
+            overflow: hidden;
+            padding: 25px 20px;
+            border-radius: 10px;
+            isolation: isolate;
+            margin-bottom: 30px;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color), var(--primary-color));
+            background-size: 300% 300%;
+            z-index: -1;
+            border-radius: 12px;
+            animation: gradientBorder 4s ease infinite;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: url('casino-bg.jpg') no-repeat center center/cover;
+            z-index: -2;
+            border-radius: 10px;
+        }
+
+        .hero h1 {
+            font-size: 36px;
+            text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+            margin: 0 0 10px 0;
+        }
+
+        .bonus-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .bonus-card {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 15px;
+            border-radius: 10px;
+            transition: transform 0.3s;
+            min-height: 220px;
+        }
+
+        .bonus-card:hover {
+            transform: scale(1.03);
+            box-shadow: 0 0 15px var(--primary-color);
+        }
+
+        .casino-logo {
+            width: 100px;
+            height: auto;
+            margin: 0 auto 10px;
+            display: block;
+            filter: drop-shadow(0 0 8px rgba(255, 0, 85, 0.5));
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background: var(--button-bg);
+            color: white;
+            font-size: 14px;
+            text-transform: uppercase;
+            border-radius: 4px;
+            text-decoration: none;
+            transition: 0.3s;
+            margin: 8px 0;
+            font-weight: bold;
+        }
+
+        .cta-button:hover {
+            transform: scale(1.05);
+            opacity: 0.9;
+        }
+
+        .special-offer {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 15px;
+            border-radius: 10px;
+            font-size: 16px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.5));
+            color: var(--secondary-color);
+            animation: pulseOffer 1.5s infinite alternate;
+            margin: 15px 0;
+        }
+
+        .floating-message {
+            position: fixed;
+            bottom: 15px;
+            right: 15px;
+            background: rgba(0,0,0,0.9);
+            padding: 12px;
+            border-radius: 8px;
+            font-size: 14px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.5));
+            color: var(--secondary-color);
+            animation: slideIn 0.5s forwards, fadeOut 5s 3s forwards;
+        }
+
+        .responsibility-page {
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+
+        @keyframes gradientBorder {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        @keyframes pulseOffer {
+            from { transform: scale(1); }
+            to { transform: scale(1.05); }
+        }
+
+        @keyframes slideIn {
+            from { transform: translateX(110%); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+
+        @keyframes fadeOut {
+            from { opacity: 1; }
+            to { opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Возрастное ограничение 18+ -->
+    <div id="age-verification" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.9); color: white; display: flex; justify-content: center; align-items: center; z-index: 1000;">
+        <div style="text-align: center;">
+            <h2>Внимание!</h2>
+            <p>Этот сайт предназначен для лиц старше 18 лет. Пожалуйста, подтвердите ваш возраст.</p>
+            <button onclick="verifyAge()" style="padding: 10px 20px; background: var(--button-bg); color: white; border: none; border-radius: 4px; cursor: pointer;">Мне есть 18 лет</button>
+            <button onclick="exitSite()" style="padding: 10px 20px; background: #ff0000; color: white; border: none; border-radius: 4px; cursor: pointer; margin-left: 10px;">Мне нет 18 лет</button>
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- Основной блок с предложениями -->
+        <div class="hero">
+            <h1>🚀 Тестируйте игры бесплатно с виртуальными кредитами!</h1>
+            <p>⚡ Предложение исчезнет через: <span id="countdown">05:00</span></p>
+            <a href="#offers" class="cta-button">Начать тестирование</a>
+        </div>
+
+        <!-- Специальное предложение -->
+        <div class="special-offer">
+            <h2>🎁 Уникальное предложение!</h2>
+            <p>Только сегодня: дополнительные виртуальные кредиты для тестирования! 🔥</p>
+            <a href="#offers" class="cta-button">Активировать</a>
+        </div>
+
+        <!-- Список игровых платформ -->
+        <div id="offers" class="bonus-grid">
+            <!-- Gama Casino -->
+            <div class="bonus-card">
+                <img src="gama.png" class="casino-logo" alt="Gama Casino">
+                <p>💰 150% виртуальных кредитов + 50 бесплатных вращений</p>
+                <p>🎰 Круглосуточная поддержка игроков</p>
+                <a href="https://cleellbert.com/s6b8ecf9f" 
+                   class="cta-button" 
+                   target="_blank"
+                   onclick="trackOffer('gama')">
+                    Тестировать бесплатно
+                </a>
+            </div>
+
+            <!-- Daddy Casino -->
+            <div class="bonus-card">
+                <img src="dady.png" class="casino-logo" alt="Daddy Casino">
+                <p>💰 300% виртуальных кредитов + 100 бесплатных вращений</p>
+                <p>⚡ Мгновенный доступ к демо-режиму</p>
+                <a href="https://nice-road-five.com/s7c583183" 
+                   class="cta-button" 
+                   target="_blank"
+                   onclick="trackOffer('daddy')">
+                    Начать тестирование
+                </a>
+            </div>
+
+            <!-- Arkada Casino -->
+            <div class="bonus-card">
+                <img src="arkada.png" class="casino-logo" alt="Arkada Casino">
+                <p>💰 200% виртуальных кредитов + VIP-статус</p>
+                <p>🎮 Эксклюзивные игровые автоматы</p>
+                <a href="https://synthed-neonway.com/s1cfff51c" 
+                   class="cta-button" 
+                   target="_blank"
+                   onclick="trackOffer('arkada')">
+                    Получить VIP-статус
+                </a>
+            </div>
+
+            <!-- Kent Casino -->
+            <div class="bonus-card">
+                <img src="kent.png" class="casino-logo" alt="Kent Casino">
+                <p>💰 200% виртуальных кредитов + 75 бесплатных вращений</p>
+                <p>🎲 Игры с живыми дилерами</p>
+                <a href="https://pamuatinat.xyz/s02923786" 
+                   class="cta-button" 
+                   target="_blank"
+                   onclick="trackOffer('kent')">
+                    Начать играть
+                </a>
+            </div>
+
+            <!-- Catcasino -->
+            <div class="bonus-card">
+                <img src="catcasino.png" class="casino-logo" alt="Catcasino">
+                <p>💰 180% виртуальных кредитов + 50 бесплатных вращений</p>
+                <p>🎮 Уникальные игровые автоматы</p>
+                <a href="https://catchthecatsix.com/s1f35a892" 
+                   class="cta-button" 
+                   target="_blank"
+                   onclick="trackOffer('catcasino')">
+                    Получить бонус
+                </a>
+            </div>
+
+            <!-- R7 Casino -->
+            <div class="bonus-card">
+                <img src="r7.png" class="casino-logo" alt="R7 Casino">
+                <p>💰 250% виртуальных кредитов + 100 бесплатных вращений</p>
+                <p>⚡ Моментальные результаты</p>
+                <a href="https://aristocratic-hall.com/sa62b1de3" 
+                   class="cta-button" 
+                   target="_blank"
+                   onclick="trackOffer('r7')">
+                    Играть сейчас
+                </a>
+            </div>
+
+            <!-- Kometa Casino -->
+            <div class="bonus-card">
+                <img src="kometa.png" class="casino-logo" alt="Kometa Casino">
+                <p>💰 170% виртуальных кредитов + 30 бесплатных вращений</p>
+                <p>🚀 Космические джекпоты</p>
+                <a href="https://spangle-flight.com/s4e424f5c" 
+                   class="cta-button" 
+                   target="_blank"
+                   onclick="trackOffer('kometa')">
+                    Забрать приз
+                </a>
+            </div>
+        </div>
+
+        <!-- Страница об ответственности -->
+        <div class="responsibility-page">
+            <h2>Об ответственности</h2>
+            <p>Наш сайт предоставляет исключительно доступ к демо-режиму игровых автоматов от партнерских платформ. Мы не поддерживаем игру на реальные деньги и настоятельно рекомендуем использовать только виртуальные кредиты для тестирования игр.</p>
+            <p>Если вы обнаружите, что какая-либо из платформ предлагает игру на реальные деньги, пожалуйста, сообщите нам. Мы прекращаем сотрудничество с такими провайдерами.</p>
+            <p>Играйте ответственно. Участие в играх возможно только для лиц старше 18 лет. Если вы чувствуете, что у вас есть проблемы с азартными играми, обратитесь за помощью в специализированные организации.</p>
+            <a href="https://www.gamblingtherapy.org/" target="_blank" style="color: var(--secondary-color);">Получить помощь</a>
+        </div>
+    </div>
+
+    <!-- Всплывающее уведомление -->
+    <div class="floating-message" id="floating-message">🔥 Новый рекорд виртуальных кредитов на Gama Casino!</div>
+
+    <!-- Футер -->
+    <footer style="padding: 20px; background: rgba(255, 255, 255, 0.1); text-align: center; margin-top: 30px;">
+        <p>Играйте ответственно. Участие в играх возможно только для лиц старше 18 лет.</p>
+    </footer>
+
+    <script>
+        // Таймер обратного отсчета
+        let timeLeft = 300;
+        function updateTimer() {
+            let minutes = Math.floor(timeLeft / 60);
+            let seconds = timeLeft % 60;
+            document.getElementById("countdown").innerText = 
+                `${minutes}:${seconds.toString().padStart(2, '0')}`;
+            if (timeLeft > 0) timeLeft--;
+        }
+        setInterval(updateTimer, 1000);
+
+        // Трекинг кликов
+        function trackOffer(casino) {
+            console.log(`[CLICK] ${casino.toUpperCase()}`);
+            if (window.dataLayer) {
+                dataLayer.push({
+                    'event': 'bonus_click',
+                    'casino': casino,
+                    'timestamp': Date.now()
+                });
+            }
+        }
+
+        // Всплывающие сообщения
+        const messages = [
+            "🔥 Gama Casino: новый рекорд виртуальных кредитов!",
+            "🎉 В Daddy Casino разыгрывается виртуальный джекпот!",
+            "💎 Arkada: 10 новых победителей в демо-режиме!",
+            "🚀 Kometa разыгрывает космический приз",
+            "🏆 R7: Турнир с виртуальным призовым фондом"
+        ];
+        
+        setInterval(() => {
+            const randomMsg = messages[Math.floor(Math.random() * messages.length)];
+            document.getElementById('floating-message').textContent = randomMsg;
+        }, 7000);
+
+        // Возрастное ограничение
+        function verifyAge() {
+            document.getElementById('age-verification').style.display = 'none';
+        }
+
+        function exitSite() {
+            window.location.href = 'https://www.google.com';
+        }
+    </script>
+</body>
+</html>
